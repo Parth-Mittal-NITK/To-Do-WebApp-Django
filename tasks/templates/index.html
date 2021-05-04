@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do App</title>
+</head>
+
+<body>
+    <div class="container">
+        <h2>To Do</h2>
+        <form action="/" method="POST">
+            {% csrf_token %}
+            {{form.title}}
+            <!--If only {{form}} would be given, all the details 
+                            related to our form would show up-->
+            <button type="submit" name="Create Task">Create Task</button>
+            <!--These are not provided by default by the form-->
+        </form>
+
+        {% for i in all_tasks%}
+        <ol>
+            {% if i.complete == True %}
+            <strike>
+                <ul>{{i.title}}</ul>
+            </strike>
+            {% else %}
+            <ul>{{i.title}}</ul>
+            {% endif %}
+            <a href="update_task/{{i.id}}">Update</a>
+            <a href="delete_task/{{i.id}}">Delete</a>
+            <hr>
+        </ol>
+    </div>
+    {% endfor %}
+</body>
+
+</html>
