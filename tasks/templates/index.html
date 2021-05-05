@@ -20,6 +20,7 @@
             margin: 0;
             padding: 0;
             font-family: 'Noto Sans SC', sans-serif;
+            font-weight: 400;
         }
         
         html {
@@ -45,9 +46,12 @@
         #id_title {
             display: block;
             width: 50%;
+            min-width: 15rem;
             /* line-height: 4; */
             margin-bottom: 1rem;
             padding: 1rem;
+            font-size: 1rem;
+            background-color: rgb(221, 231, 248);
         }
         
         form {
@@ -61,6 +65,7 @@
         form button {
             display: block;
             width: 50%;
+            min-width: 15rem;
             padding: 0.5rem;
             border-radius: 4px;
             font-family: 'Cabin', sans-serif;
@@ -81,10 +86,12 @@
         
         .cards ol {
             display: block;
-            border: 2px solid red;
+            /* border: 2px solid red; */
+            background-color: rgb(209, 209, 241);
+            border-radius: 6px;
             width: 15rem;
             margin: 0.5rem 1rem;
-            padding: 0.5rem;
+            padding: 0.6rem;
             text-align: center;
         }
         
@@ -94,7 +101,8 @@
             height: 4rem;
             margin-bottom: 0.5rem;
             text-align: center;
-            border: 2px solid black;
+            word-wrap: break-word;
+            /* overflow-x: scroll; */
         }
         
         .button {
@@ -102,7 +110,6 @@
             width: 40%;
             padding: 0.4rem 0.3rem;
             margin: 0.4rem 0.3rem;
-            /* border: 2px solid green; */
             border-radius: 6px;
             text-decoration: none;
             background-color: rgb(152, 152, 247);
@@ -113,7 +120,7 @@
 
 <body>
     <div class="container">
-        <h2>To Do</h2>
+        <h2>To Do List</h2>
         <form action="/" method="POST">
             {% csrf_token %} {{form.title}}
             <!--If only {{form}} would be given, all the details 
