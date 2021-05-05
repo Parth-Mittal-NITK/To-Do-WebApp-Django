@@ -16,7 +16,7 @@
         *::after,
         *::before {
             box-sizing: border-box;
-            text-decoration: none;
+            /* text-decoration: none; */
             margin: 0;
             padding: 0;
             font-family: 'Noto Sans SC', sans-serif;
@@ -66,7 +66,7 @@
             font-family: 'Cabin', sans-serif;
             font-weight: 600;
             color: rgb(63, 63, 63);
-            background-color: rgb(207, 173, 247);
+            background-color: rgb(152, 152, 247);
         }
         
         .cards {
@@ -74,13 +74,15 @@
             /* flex-direction: row; */
             margin: 1rem;
             flex-wrap: wrap;
-            max-width: 100%;
+            align-items: center;
+            justify-content: center;
+            /* max-width: 100%; */
         }
         
         .cards ol {
             display: block;
             border: 2px solid red;
-            width: 22%;
+            width: 15rem;
             margin: 0.5rem 1rem;
             padding: 0.5rem;
             text-align: center;
@@ -100,8 +102,11 @@
             width: 40%;
             padding: 0.4rem 0.3rem;
             margin: 0.4rem 0.3rem;
-            border: 2px solid green;
+            /* border: 2px solid green; */
             border-radius: 6px;
+            text-decoration: none;
+            background-color: rgb(152, 152, 247);
+            color: white;
         }
     </style>
 </head>
